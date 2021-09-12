@@ -15,7 +15,7 @@ namespace GildedRoseTests
                 new Item {Name = "+5 Dexterity Vest", SellIn = 0, Quality = 20},
             };
 
-            var sut = new GildedRose(items);
+            var sut = new GildedRose(new ItemQualityUpdater(), items);
 
             sut.UpdateQuality();
 
@@ -33,7 +33,7 @@ namespace GildedRoseTests
                 new Item {Name = "Conjured Mana Cake", SellIn = sellin, Quality = quality},
             };
 
-            var sut = new GildedRose(items);
+            var sut = new GildedRose(new ItemQualityUpdater(), items);
 
             sut.UpdateQuality();
 
@@ -50,7 +50,7 @@ namespace GildedRoseTests
                 new Item {Name = itemName, SellIn = sellin, Quality = 0},
             };
 
-            var sut = new GildedRose(items);
+            var sut = new GildedRose(new ItemQualityUpdater(), items);
 
             sut.UpdateQuality();
 
@@ -65,7 +65,7 @@ namespace GildedRoseTests
                 new Item {Name = "Aged Brie", SellIn = 10, Quality = 0},
             };
 
-            var sut = new GildedRose(items);
+            var sut = new GildedRose(new ItemQualityUpdater(), items);
 
             sut.UpdateQuality();
 
@@ -82,7 +82,7 @@ namespace GildedRoseTests
                 new Item {Name = itemName, SellIn = 10, Quality = 50},
             };
 
-            var sut = new GildedRose(items);
+            var sut = new GildedRose(new ItemQualityUpdater(), items);
 
             sut.UpdateQuality();
 
@@ -98,7 +98,7 @@ namespace GildedRoseTests
                 new Item {Name = "Sulfuras, Hand of Ragnaros", SellIn = 10, Quality = 80},
             };
 
-            var sut = new GildedRose(items);
+            var sut = new GildedRose(new ItemQualityUpdater(), items);
 
             sut.UpdateQuality();
 
@@ -118,7 +118,7 @@ namespace GildedRoseTests
                 new Item {Name = "Backstage passes to a TAFKAL80ETC concert", SellIn = sellin, Quality = quality},
             };
 
-            var sut = new GildedRose(items);
+            var sut = new GildedRose(new ItemQualityUpdater(), items);
 
             sut.UpdateQuality();
 

@@ -9,7 +9,7 @@ namespace GildedRoseKata
         {
         }
 
-        public override void UpdateQuality()
+        protected override void UpdateQuality()
         {
             Quality = Math.Min(50, Quality + 1);
         }

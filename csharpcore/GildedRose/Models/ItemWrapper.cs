@@ -4,11 +4,7 @@ namespace GildedRoseKata
 {
     public abstract class ItemWrapper
     {
-        public string Name 
-        { 
-            get { return _item.Name; }
-            protected set { _item.Name = value; }
-        }
+        public string Name => _item.Name;
 
         public int Quality
         {
@@ -40,9 +36,9 @@ namespace GildedRoseKata
             _item = item;
         }
 
-        public abstract void UpdateQuality();
+        protected abstract void UpdateQuality();
 
-        public virtual void UpdateSellin() 
+        protected virtual void UpdateSellin() 
         {
             SellIn -= 1;
         }

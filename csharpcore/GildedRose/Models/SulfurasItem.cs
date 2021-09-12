@@ -5,13 +5,14 @@
         public SulfurasItem(Item item)
             : base(item)
         {
+            Quality = 80;
         }
 
-        public override void UpdateQuality()
+        protected override void UpdateQuality()
         {
         }
 
-        public override void UpdateSellin()
+        protected override void UpdateSellin()
         {
         }
     }

@@ -9,6 +9,38 @@ namespace GildedRoseKata
         {
             Console.WriteLine("OMGHAI!");
 
+            var items = GetItems();
+            
+            var itemQualityUpdater = new ItemPrinter(
+                new ItemQualityUpdater());
+
+            var app = new GildedRose(
+                itemQualityUpdater, 
+                items);
+
+            for (var i = 0; i < 31; i++)
+            {
+                PrintHeader(i);
+
+                app.UpdateQuality();
+
+                PrintFooter();
+            }
+        }
+
+        private static void PrintHeader(int i)
+        {
+            Console.WriteLine("-------- day " + i + " --------");
+            Console.WriteLine("name, sellIn, quality");
+        }
+
+        private static void PrintFooter()
+        {
+            Console.WriteLine("");
+        }
+
+        private static List<Item> GetItems()
+        {
             var Items = new List<Item>{
                 new Item {Name = "+5 Dexterity Vest", SellIn = 10, Quality = 20},
                 new Item {Name = "Aged Brie", SellIn = 2, Quality = 0},
@@ -33,23 +65,9 @@ namespace GildedRoseKata
                     SellIn = 5,
                     Quality = 49
                 },
-				// this conjured item does not work properly yet
 				new Item {Name = "Conjured Mana Cake", SellIn = 3, Quality = 6}
             };
-
-            var app = new GildedRose(Items);
-
-            for (var i = 0; i < 31; i++)
-            {
-                Console.WriteLine("-------- day " + i + " --------");
-                Console.WriteLine("name, sellIn, quality");
-                for (var j = 0; j < Items.Count; j++)
-                {
-                    Console.WriteLine(Items[j].Name + ", " + Items[j].SellIn + ", " + Items[j].Quality);
-                }
-                Console.WriteLine("");
-                app.UpdateQuality();
-            }
+            return Items;
         }
     }
 }

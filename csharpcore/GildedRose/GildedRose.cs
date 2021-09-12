@@ -4,9 +4,14 @@ namespace GildedRoseKata
 {
     public class GildedRose
     {
+        private readonly IUpdateItemQuality _itemQualityUpdater;
         private readonly IList<Item> _items;
-        public GildedRose(IList<Item> Items)
+
+        public GildedRose(
+            IUpdateItemQuality itemQualityUpdater,
+            IList<Item> Items)
         {
+            _itemQualityUpdater = itemQualityUpdater;
             _items = Items;
         }
 
@@ -14,8 +19,7 @@ namespace GildedRoseKata
         {
             for (var i = 0; i < _items.Count; i++)
             {
-                var wrapper = ItemWrapperFactory.GetItemWrapper(_items[i]);
-                wrapper.UpdateInventory();
+                _itemQualityUpdater.UpdateItemQuality(_items[i]);
             }
         }
     }

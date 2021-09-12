@@ -7,7 +7,7 @@
         {
         }
 
-        public override void UpdateQuality()
+        protected override void UpdateQuality()
         {
             Quality = Quality > 0
                 ? Quality - 1
